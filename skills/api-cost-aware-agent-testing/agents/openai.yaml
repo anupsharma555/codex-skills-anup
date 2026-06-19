@@ -1,4 +1,0 @@
-interface:
-  display_name: "API Cost-Aware Agent Testing"
-  short_description: "Stage agent tests to control API spend"
-  default_prompt: "Use $api-cost-aware-agent-testing to plan low-cost agent testing before live API calls."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Implementation Strategy"
-  short_description: "Plan scoped, contract-safe implementation"
-  default_prompt: "Use $implementation-strategy to plan this change before editing code."

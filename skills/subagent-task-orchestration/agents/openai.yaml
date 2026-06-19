@@ -1,4 +1,0 @@
-interface:
-  display_name: "Subagent Task Orchestration"
-  short_description: "Delegate broad work and integrate safely"
-  default_prompt: "Use $subagent-task-orchestration to split this work across subagents and hand results back to the main agent."

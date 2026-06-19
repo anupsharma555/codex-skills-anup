@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Implementation Strategy"
+  short_description: "Plan scoped, contract-safe implementation"
+  default_prompt: "Use $codex-implementation-strategy to plan this change before editing code."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Repo Change Verification"
-  short_description: "Run repo-aware checks before handoff"
-  default_prompt: "Use $repo-change-verification to verify this repo change before final handoff."

@@ -10,47 +10,47 @@ See [docs/lifecycle.md](docs/lifecycle.md) for the compact lifecycle view.
 
 ## Included Skills
 
-### `requirements-acceptance-clarifier`
+### `codex-requirements-acceptance-clarifier`
 
 Use before implementation when a request is broad, vague, risky, or hard to verify. It turns intent into objective requirements, non-goals, acceptance criteria, and practical verification standards.
 
-### `implementation-strategy`
+### `codex-implementation-strategy`
 
 Use before non-trivial code changes. It identifies the compatibility boundary, affected contracts, implementation approach, risk slicing, and verification plan before editing.
 
-### `mature-repo-refinement`
+### `codex-mature-repo-refinement`
 
 Use for small, behavior-preserving improvements in mature repositories. It helps Codex make code slightly cleaner, more efficient, better organized, or easier to maintain without hidden behavior changes.
 
-### `code-review-and-quality`
+### `codex-code-review-and-quality`
 
 Use during or after implementation to review code for correctness, simplicity, maintainability, performance risk, security basics, and common AI-generated failure modes.
 
-### `test-quality-and-coverage`
+### `codex-test-quality-and-coverage`
 
 Use when adding, improving, or reviewing tests. It emphasizes tests that prove behavior, avoid fake confidence, reduce flakiness, and catch real regressions.
 
-### `runtime-observability-diagnostics`
+### `codex-runtime-observability-diagnostics`
 
 Use when runtime behavior must be diagnosable from logs, tracebacks, traces, metrics, health checks, receipts, or runtime probes. It includes real-time traceback triage guidance.
 
-### `api-cost-aware-agent-testing`
+### `codex-api-cost-aware-agent-testing`
 
 Use when testing API-backed or agentic workflows where live calls may cost money. It requires offline diagnostics first, one-agent-at-a-time testing, explicit budgets, and billing/usage checks where available.
 
-### `repo-change-verification`
+### `codex-repo-change-verification`
 
 Use after changes to prove the current repo state before handoff. It helps Codex discover the right local checks, run focused validation, debug failures, and report what remains unverified.
 
-### `supply-docs-release-guard`
+### `codex-supply-docs-release-guard`
 
 Use for high-blast-radius surfaces: dependencies, lockfiles, package scripts, CI, Dockerfiles, docs claims, config docs, changelogs, releases, and PR summaries.
 
-### `subagent-task-orchestration`
+### `codex-subagent-task-orchestration`
 
 Use when the user explicitly asks for Codex subagents or broad parallel work. It defines safe delegation, worker boundaries, read-only investigation modes, disjoint implementation slices, and main-agent integration.
 
-### `repo-diagnostic-backlog-review`
+### `codex-repo-diagnostic-backlog-review`
 
 Use for diagnostic-only repo audits. It creates numbered, evidence-backed backlog tickets that future Codex sessions can pick up and fix.
 
@@ -58,17 +58,17 @@ Use for diagnostic-only repo audits. It creates numbered, evidence-backed backlo
 
 These skills are designed to compose without making Codex dependent on a single workflow:
 
-1. Clarify requirements with `requirements-acceptance-clarifier`.
-2. Plan the implementation boundary with `implementation-strategy`.
-3. Make careful improvements with `mature-repo-refinement` or normal implementation.
-4. Review code with `code-review-and-quality`.
-5. Strengthen tests with `test-quality-and-coverage`.
-6. Improve runtime diagnosis with `runtime-observability-diagnostics` when logs, traces, agents, jobs, APIs, or CLIs are involved.
-7. Use `api-cost-aware-agent-testing` before live model/API testing.
-8. Verify the final state with `repo-change-verification`.
-9. Use `supply-docs-release-guard` whenever docs, dependencies, CI, release, or PR surfaces are touched.
-10. Use `subagent-task-orchestration` only for explicitly delegated or broad parallel work.
-11. Use `repo-diagnostic-backlog-review` when issues should be recorded for later rather than fixed immediately.
+1. Clarify requirements with `codex-requirements-acceptance-clarifier`.
+2. Plan the implementation boundary with `codex-implementation-strategy`.
+3. Make careful improvements with `codex-mature-repo-refinement` or normal implementation.
+4. Review code with `codex-code-review-and-quality`.
+5. Strengthen tests with `codex-test-quality-and-coverage`.
+6. Improve runtime diagnosis with `codex-runtime-observability-diagnostics` when logs, traces, agents, jobs, APIs, or CLIs are involved.
+7. Use `codex-api-cost-aware-agent-testing` before live model/API testing.
+8. Verify the final state with `codex-repo-change-verification`.
+9. Use `codex-supply-docs-release-guard` whenever docs, dependencies, CI, release, or PR surfaces are touched.
+10. Use `codex-subagent-task-orchestration` only for explicitly delegated or broad parallel work.
+11. Use `codex-repo-diagnostic-backlog-review` when issues should be recorded for later rather than fixed immediately.
 
 ## Installation
 
