@@ -59,6 +59,11 @@ This lifecycle describes how the general skills in this repository fit together.
     - Use for diagnostic-only repo audits that should create actionable backlog tickets for later sessions.
     - Output: numbered tickets with evidence, severity, suggested fix, and validation path.
 
+12. **Explain current work clearly**
+    - Skill: `codex-explain-changes`
+    - Use when the user wants to understand what changed, why it matters, and what should be verified next.
+    - Output: a grounded walkthrough from local git evidence, session context, or generated artifacts, with short excerpts when useful.
+
 ## Avoiding Overuse
 
 These skills should improve judgment, not create ceremony. Skip a skill when the task is tiny, the answer is obvious from nearby code, or the user asked only for a direct answer. Combine skills when the task crosses boundaries, such as a runtime agent change that needs requirements, implementation planning, cost-aware live testing, observability, and final verification.

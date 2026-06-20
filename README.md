@@ -54,6 +54,10 @@ Use when the user explicitly asks for Codex subagents or broad parallel work. It
 
 Use for diagnostic-only repo audits. It creates numbered, evidence-backed backlog tickets that future Codex sessions can pick up and fix.
 
+### `codex-explain-changes`
+
+Use when the user asks what Codex changed and why. It explains current working-tree, staged, session, or artifact changes from local evidence, with concise code excerpts and next verification steps.
+
 ## Lifecycle Fit
 
 These skills are designed to compose without making Codex dependent on a single workflow:
@@ -69,6 +73,7 @@ These skills are designed to compose without making Codex dependent on a single 
 9. Use `codex-supply-docs-release-guard` whenever docs, dependencies, CI, release, or PR surfaces are touched.
 10. Use `codex-subagent-task-orchestration` only for explicitly delegated or broad parallel work.
 11. Use `codex-repo-diagnostic-backlog-review` when issues should be recorded for later rather than fixed immediately.
+12. Use `codex-explain-changes` when the user wants a grounded walkthrough of what changed, why it matters, and what should be verified next.
 
 ## Installation
 
