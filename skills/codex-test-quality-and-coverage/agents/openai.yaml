@@ -1,4 +1,4 @@
 interface:
-  display_name: "Codex Test Quality and Coverage"
+  display_name: "Codex General Test Quality and Coverage"
   short_description: "Write and review tests that prove behavior"
   default_prompt: "Use $codex-test-quality-and-coverage to improve or review the tests for this change."

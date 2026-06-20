@@ -1,4 +1,4 @@
 interface:
-  display_name: "Codex API Cost-Aware Agent Testing"
+  display_name: "Codex General API Cost-Aware Agent Testing"
   short_description: "Stage agent tests to control API spend"
   default_prompt: "Use $codex-api-cost-aware-agent-testing to plan low-cost agent testing before live API calls."

@@ -1,4 +1,4 @@
 interface:
-  display_name: "Codex Supply Docs Release Guard"
+  display_name: "Codex General Supply Docs Release Guard"
   short_description: "Guard dependencies, docs, CI, and releases"
   default_prompt: "Use $codex-supply-docs-release-guard before changing dependencies, CI, docs claims, or release surfaces."
