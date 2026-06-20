@@ -1,4 +1,4 @@
 interface:
   display_name: "Codex General Explain Changes"
-  short_description: "Explain current Codex changes from local evidence"
-  default_prompt: "Use $codex-general-explain-changes to explain what changed, why it matters, and what should be verified next."
+  short_description: "Explain current Codex changes and session deltas"
+  default_prompt: "Use $codex-general-explain-changes to summarize the current session changes, explain meaningful deltas since the last update when available, and name the next verification step."
