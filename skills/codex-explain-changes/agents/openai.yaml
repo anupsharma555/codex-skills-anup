@@ -1,4 +1,0 @@
-interface:
-  display_name: "Codex General Explain Changes"
-  short_description: "Explain current Codex changes from local evidence"
-  default_prompt: "Use $codex-explain-changes to explain what changed, why it matters, and what should be verified next."

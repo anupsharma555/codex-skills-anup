@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex General Requirements Acceptance Clarifier"
+  short_description: "Turn vague work into objective done criteria"
+  default_prompt: "Use $codex-general-requirements-acceptance-clarifier to define acceptance criteria and practical verification before implementation."

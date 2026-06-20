@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex General Mature Repo Refinement"
+  short_description: "Make small safe improvements to mature repos"
+  default_prompt: "Use $codex-general-mature-repo-refinement to make a mature repo slightly cleaner, more efficient, organized, or functional without breaking behavior."

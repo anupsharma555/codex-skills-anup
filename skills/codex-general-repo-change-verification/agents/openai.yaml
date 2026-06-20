@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex General Repo Change Verification"
+  short_description: "Run repo-aware checks before handoff"
+  default_prompt: "Use $codex-general-repo-change-verification to verify this repo change before final handoff."

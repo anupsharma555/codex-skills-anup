@@ -1,0 +1,176 @@
+---
+name: codex-general-explain-changes
+description: Explain active Codex implementation work from local repository state, current session context, or generated artifacts. Use when the user invokes /explain-changes, asks what changed and why, wants a guided walkthrough of current working-tree or staged changes, asks for a summary since a prior explanation, requests script/function-level details, or wants follow-up Q&A grounded in available local evidence. Do not use for code review findings, implementation planning, or remote pull request review unless the user explicitly provides the relevant local evidence.
+---
+
+# Codex Explain Changes
+
+## Overview
+
+Use this skill to explain what Codex changed, why it matters, and what should be verified next. Prefer local git evidence when a repository is available. When no repo is available, explain from the visible session context, tool outputs, generated files, installed artifacts, and user-provided paths.
+
+Treat available local evidence as authoritative. Separate verified facts from inferred rationale. Do not fetch remotes, inspect hosted pull requests, or depend on external review services unless the user explicitly asks and provides the necessary context.
+
+## Command Contract
+
+Support these forms as variants of the same skill:
+
+- `/explain-changes` - explain active uncommitted changes from `git diff HEAD`.
+- `/explain-changes --staged` - explain staged changes from `git diff --staged`.
+- `/explain-changes --since <ref>` - explain changes from `git diff <ref>..HEAD`.
+- `/explain-changes --summary` - provide a concise explanation focused on intent, behavior, and next verification.
+- `/explain-changes --details` - include more file, function, script, data-flow, or validation detail.
+- `/explain-changes --delta` - compare current evidence to the last explanation, heartbeat, or user-provided baseline.
+- `/explain-changes --code` - include short code excerpts and explanation anchors.
+- `/explain-changes --repo <path>` - explain changes in a specific local repo.
+- `/explain-changes --chat` - explain a chat/session implementation when no git repo is available.
+- `/explain-changes --session` - explain visible implementation work across the current Codex session context.
+- `/explain-changes --artifact <path>` - explain a specific generated file, skill, report, or artifact.
+
+Do not create separate skill entries for these variants.
+
+## Repo-Backed Workflow
+
+1. Identify the repo and scope.
+   - Start with the current working directory and run `git status --short`.
+   - Use `git -C <repo> ...` when the user provides `--repo <path>`.
+   - If the directory is not a git repo, use Chat Context Mode or ask for the target repo path.
+   - Prefer `git diff HEAD` for active uncommitted changes.
+   - Use `git diff --staged` only when staged changes are requested.
+   - Use `git show <commit>` or `git diff <base>..<head>` only when the user names a commit or range.
+   - Do not run `git fetch` as part of this workflow.
+
+2. Build orientation before explaining.
+   - Run `git diff --stat` for scope.
+   - Inspect relevant hunks with the requested diff command.
+   - Group changes into implementation concepts rather than file order.
+   - Read post-change files when hunks alone do not explain behavior.
+   - Compare against prior visible explanation output for `--delta`.
+
+3. Explain the implementation.
+   - Start with the user-visible goal and current state.
+   - Explain what changed, why it matters, and what behavior or workflow is affected.
+   - Include short code excerpts only when they clarify design, behavior, control flow, data shape, validation, error handling, or tests.
+   - Define project-local jargon or shorthand the first time it appears.
+   - State inferred rationale as inference, not fact.
+
+4. Connect changes to verification.
+   - Name commands already run and what they proved.
+   - Name the next focused command or probe when verification is still needed.
+   - Do not claim tests, builds, reviews, or deployments passed unless there is current evidence.
+
+## Chat Context Mode
+
+Use this mode when no repo diff is available, the user passes `--chat` or `--session`, or the work happened in an open/projectless Codex session.
+
+Evidence to use:
+
+- visible conversation and user requirements
+- tool calls and outputs
+- files created or edited in the current workspace
+- installed skill files or generated artifacts when the task changed them
+- explicit artifact paths from the user
+
+Scope rules:
+
+- `--chat` means the current visible chat and directly referenced artifacts.
+- `--session` means the current visible Codex session context.
+- Do not claim to summarize unrelated threads, repos, or hidden work.
+- If the requested scope is not inspectable from available evidence, ask for the missing path, artifact, or session context.
+
+## Delta Mode
+
+Use `--delta` when the user asks what changed since a prior update.
+
+1. Identify the baseline: prior explanation, heartbeat, user-provided summary, commit, or diff range.
+2. Compare current status, diff stat, changed files, relevant hunks, generated artifacts, and validation output.
+3. Report only material changes:
+   - newly changed files or removed changes
+   - changed behavior or data flow
+   - changed validation status
+   - new failure modes or resolved risks
+   - new next steps
+4. If nothing material changed, say that directly and avoid a full recap.
+
+## Output Shape
+
+Use this shape for normal repo-backed explanations:
+
+```markdown
+## What Changed
+
+<One paragraph summary of the implementation goal and current state.>
+
+## Step 1: <Concept>
+
+Files: `<path>`, `<path>`
+
+Snippet A - `<file>:<function_or_region>`:
+
+```<language>
+<short excerpt>
+```
+
+Explanation:
+<What changed, why it matters, and what behavior or risk it affects.>
+
+## Watch Points
+
+- <Risk, edge case, missing verification, or assumption.>
+
+## Next Verification
+
+- `<command>` - <what it proves>
+```
+
+For `--summary`, use fewer sections and fewer excerpts. For `--details`, add function/script-level details where they help. For `--code`, include more short excerpts with stable labels such as `Snippet A` or `Step 2` so the user can ask follow-up questions.
+
+Use this shape for chat-context explanations:
+
+```markdown
+## What Codex Implemented In This Session
+
+<One paragraph summary grounded in visible evidence.>
+
+## Artifact: `<path>`
+
+Purpose:
+<What this artifact does.>
+
+Key excerpt:
+
+```<language>
+<short excerpt>
+```
+
+Why it matters:
+<How it supports the user request.>
+
+## Verification
+
+- `<command>` - <what it proved>
+
+## Remaining Notes
+
+- <Assumption, limitation, or next manual step>
+```
+
+## Safety And Accuracy
+
+- Keep explanations grounded in current local evidence.
+- Do not invent motivation, test results, or deployment state.
+- Do not expose secrets, credentials, tokens, raw private data, or large sensitive payloads from diffs.
+- Avoid pasting full files when a short excerpt and summary will do.
+- Do not treat generated artifacts as correct without inspecting the relevant content.
+- Do not run destructive commands or external writes while explaining changes.
+- If the diff is large, summarize by concept and offer to drill into specific files.
+
+## Handoff
+
+End with:
+
+- what changed
+- why it matters
+- what was verified
+- what remains unverified
+- the next best focused check or review step

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex General Runtime Observability Diagnostics"
+  short_description: "Make logs and traces diagnostically useful"
+  default_prompt: "Use $codex-general-runtime-observability-diagnostics to inspect or improve logs, traces, and runtime diagnostic evidence."

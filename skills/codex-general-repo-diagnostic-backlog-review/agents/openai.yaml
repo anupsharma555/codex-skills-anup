@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex General Repo Diagnostic Backlog Review"
+  short_description: "Find repo issues and write backlog tickets"
+  default_prompt: "Use $codex-general-repo-diagnostic-backlog-review to audit this repo and create backlog tickets for later Codex sessions."
