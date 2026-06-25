@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex General Storage Diagnostics"
+  short_description: "Diagnose repo size and storage bloat"
+  default_prompt: "Use $codex-general-storage-diagnostics to map repository size, file counts, folder counts, and storage bloat candidates without changing files."

@@ -34,37 +34,42 @@ This lifecycle describes how the general skills in this repository fit together.
    - Use for logs, tracebacks, traces, metrics, health checks, receipts, agents, jobs, CLIs, APIs, and other runtime workflows.
    - Output: diagnostic evidence that answers what happened, where, for which run/input, why it failed or skipped, and what to inspect next.
 
-7. **Test API-backed agents without overspending**
+7. **Diagnose repository storage pressure**
+   - Skill: `codex-general-storage-diagnostics`
+   - Use for read-only repository size, file-count, folder-count, path-length, and possible bloat diagnostics.
+   - Output: total footprint, largest folders/files, file-count hotspots, longest paths, candidate review areas, and cleanup-proof boundaries.
+
+8. **Test API-backed agents without overspending**
    - Skill: `codex-general-api-cost-aware-agent-testing`
    - Use for OpenAI/API-backed agents, tool-calling workflows, evals, or live SDK behavior where live calls can cost money.
    - Output: staged offline-first diagnostics, explicit budget gates, one-agent-at-a-time live tests, and usage/cost notes when available.
 
-8. **Monitor OpenAI spend during live work**
+9. **Monitor OpenAI spend during live work**
    - Skill: `codex-general-openai-cost-monitor`
    - Use when a workflow needs OpenAI API cost or usage polling, current-session usage buckets, or approval stop-gaps for unexpected spend movement.
    - Output: structured baseline and poll summaries, interval deltas, spend/usage flags, and user approval gates before additional API calls.
 
-9. **Verify the final repo state**
+10. **Verify the final repo state**
    - Skill: `codex-general-repo-change-verification`
    - Use after code, tests, build config, package scripts, CLI/UI/runtime workflows, schemas, or docs-linked behavior changes.
    - Output: exact checks run, what they prove, what failed and was fixed, and what remains unverified.
 
-10. **Guard high-blast-radius surfaces**
+11. **Guard high-blast-radius surfaces**
    - Skill: `codex-general-supply-docs-release-guard`
    - Use for dependencies, lockfiles, package scripts, CI, GitHub Actions, Dockerfiles, docs claims, config/env docs, changelogs, releases, and PR summaries.
    - Output: safer dependency/tooling/docs/release changes with evidence and explicit stop points.
 
-11. **Use subagents only when useful and authorized**
+12. **Use subagents only when useful and authorized**
    - Skill: `codex-general-subagent-task-orchestration`
    - Use when the user explicitly asks for subagents, parallel investigation, broad multi-issue work, or disjoint worker fixes.
    - Output: clear worker ownership, bounded delegation, main-agent synthesis, integrated validation, and final handoff.
 
-12. **Record future work instead of fixing immediately**
+13. **Record future work instead of fixing immediately**
    - Skill: `codex-general-repo-diagnostic-backlog-review`
    - Use for diagnostic-only repo audits that should create actionable backlog tickets for later sessions.
    - Output: numbered tickets with evidence, severity, suggested fix, and validation path.
 
-13. **Explain current work clearly**
+14. **Explain current work clearly**
    - Skill: `codex-general-explain-changes`
    - Use when the user wants to understand what changed, why it matters, and what should be verified next.
    - Output: a grounded walkthrough from local git evidence, session context, or generated artifacts, with short excerpts when useful.
