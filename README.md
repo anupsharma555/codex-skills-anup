@@ -42,6 +42,10 @@ Use when runtime behavior must be diagnosable from logs, tracebacks, traces, met
 
 Use when testing API-backed or agentic workflows where live calls may cost money. It requires offline diagnostics first, one-agent-at-a-time testing, explicit budgets, and billing/usage checks where available.
 
+### `codex-general-openai-cost-monitor`
+
+Use when monitoring OpenAI API spend or usage drift during live workflows. It supports Admin Costs snapshots, Admin Usage completion buckets, two-minute watch mode, and approval stop-gaps for unexpected spend movement.
+
 ### `codex-general-repo-change-verification`
 
 Use after changes to prove the current repo state before handoff. It helps Codex discover the right local checks, run focused validation, debug failures, and report what remains unverified.
@@ -73,11 +77,12 @@ These skills are designed to compose without making Codex dependent on a single 
 5. Strengthen tests with `codex-general-test-quality-and-coverage`.
 6. Improve runtime diagnosis with `codex-general-runtime-observability-diagnostics` when logs, traces, agents, jobs, APIs, or CLIs are involved.
 7. Use `codex-general-api-cost-aware-agent-testing` before live model/API testing.
-8. Verify the final state with `codex-general-repo-change-verification`.
-9. Use `codex-general-supply-docs-release-guard` whenever docs, dependencies, CI, release, or PR surfaces are touched.
-10. Use `codex-general-subagent-task-orchestration` only for explicitly delegated or broad parallel work.
-11. Use `codex-general-repo-diagnostic-backlog-review` when issues should be recorded for later rather than fixed immediately.
-12. Use `codex-general-explain-changes` when the user wants a grounded walkthrough of what changed, why it matters, and what should be verified next.
+8. Use `codex-general-openai-cost-monitor` when a live workflow needs OpenAI spend or usage polling.
+9. Verify the final state with `codex-general-repo-change-verification`.
+10. Use `codex-general-supply-docs-release-guard` whenever docs, dependencies, CI, release, or PR surfaces are touched.
+11. Use `codex-general-subagent-task-orchestration` only for explicitly delegated or broad parallel work.
+12. Use `codex-general-repo-diagnostic-backlog-review` when issues should be recorded for later rather than fixed immediately.
+13. Use `codex-general-explain-changes` when the user wants a grounded walkthrough of what changed, why it matters, and what should be verified next.
 
 ## Installation
 

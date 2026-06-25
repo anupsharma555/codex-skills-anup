@@ -53,6 +53,8 @@ Use current billing/usage evidence, not memory. The preferred billing page is:
 
 https://platform.openai.com/settings/organization/billing/overview
 
+For structured OpenAI spend monitoring, use `codex-general-openai-cost-monitor` to take Admin Costs or Admin Usage snapshots before, during, and after live API work.
+
 Before live testing:
 
 - Check current billing/usage when browser or platform access is available.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex General OpenAI Cost Monitor"
+  short_description: "Monitor OpenAI spend and usage drift"
+  default_prompt: "Use $codex-general-openai-cost-monitor to baseline and monitor OpenAI API costs during this workflow."
