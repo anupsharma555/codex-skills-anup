@@ -42,6 +42,10 @@ Use when runtime behavior must be diagnosable from logs, tracebacks, traces, met
 
 Use when diagnosing repository storage footprint, file/folder counts, large paths, file-count hotspots, generated artifacts, dependency caches, build outputs, logs, reports, and other possible bloat without changing files.
 
+### `codex-general-window-placement`
+
+Use when opening, placing, inspecting, or verifying visible macOS app and browser windows across the laptop display and external monitors. It supports Magnet-style regions, live monitor geometry, and dimension-first placement verification.
+
 ### `codex-general-api-cost-aware-agent-testing`
 
 Use when testing API-backed or agentic workflows where live calls may cost money. It requires offline diagnostics first, one-agent-at-a-time testing, explicit budgets, and billing/usage checks where available.
@@ -81,13 +85,14 @@ These skills are designed to compose without making Codex dependent on a single 
 5. Strengthen tests with `codex-general-test-quality-and-coverage`.
 6. Improve runtime diagnosis with `codex-general-runtime-observability-diagnostics` when logs, traces, agents, jobs, APIs, or CLIs are involved.
 7. Use `codex-general-storage-diagnostics` when a repo needs a read-only size, file-count, path-length, or bloat-candidate audit.
-8. Use `codex-general-api-cost-aware-agent-testing` before live model/API testing.
-9. Use `codex-general-openai-cost-monitor` when a live workflow needs OpenAI spend or usage polling.
-10. Verify the final state with `codex-general-repo-change-verification`.
-11. Use `codex-general-supply-docs-release-guard` whenever docs, dependencies, CI, release, or PR surfaces are touched.
-12. Use `codex-general-subagent-task-orchestration` only for explicitly delegated or broad parallel work.
-13. Use `codex-general-repo-diagnostic-backlog-review` when issues should be recorded for later rather than fixed immediately.
-14. Use `codex-general-explain-changes` when the user wants a grounded walkthrough of what changed, why it matters, and what should be verified next.
+8. Use `codex-general-window-placement` when visible macOS app/browser windows need repeatable placement across the laptop and external monitors.
+9. Use `codex-general-api-cost-aware-agent-testing` before live model/API testing.
+10. Use `codex-general-openai-cost-monitor` when a live workflow needs OpenAI spend or usage polling.
+11. Verify the final state with `codex-general-repo-change-verification`.
+12. Use `codex-general-supply-docs-release-guard` whenever docs, dependencies, CI, release, or PR surfaces are touched.
+13. Use `codex-general-subagent-task-orchestration` only for explicitly delegated or broad parallel work.
+14. Use `codex-general-repo-diagnostic-backlog-review` when issues should be recorded for later rather than fixed immediately.
+15. Use `codex-general-explain-changes` when the user wants a grounded walkthrough of what changed, why it matters, and what should be verified next.
 
 ## Installation
 

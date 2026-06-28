@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex General Window Placement"
+  short_description: "Place app and browser windows"
+  default_prompt: "Use $codex-general-window-placement to open or reposition an app window on the least disruptive display region."
